@@ -37,6 +37,17 @@ public class Testing3 {
 		softAssert.assertAll();
 	}
 	
+	@Test (priority = 4,  dependsOnMethods = "editUser")//Delete user test@test.com
+	public void keepUser() {
+		System.out.println("I am in end test");
+		System.out.println("Before assertion");
+		softAssert.assertTrue(2 > 3, "Verifying Element1");
+		System.out.println("After assertion");
+		softAssert.assertEquals("abc", "abc1");
+		System.out.println("After second assertion");
+		softAssert.assertAll();
+	}
+	
 	
 	
 }
